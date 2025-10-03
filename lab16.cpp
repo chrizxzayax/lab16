@@ -15,6 +15,7 @@ class Colors {
         Colors() : red(0), green(0), blue(0) {} 
         Colors(int r, int g, int b) : red(r), green(g), blue(b) {}
         Colors(int r) : red(r), green(0), blue(0) {} //red only
+        Colors(int r, int g) : red(r), green(g), blue(0) {} //red and green
 
         void setRed(int r) { red = r; }
         void setGreen(int g) { green = g; }
@@ -37,6 +38,7 @@ int main() {
     Colors defaultColor; // default constructor
     Colors fullColor(255, 100, 50); //the constructor with parameters
     Colors redOnly(128);
+    Colors redGreen(60, 180);
 
     Colors colors;
     colors.setRed(75);
@@ -57,6 +59,8 @@ int main() {
     colors.print();// print the RGB values
     cout<< "red only: ";
     redOnly.print();
+    cout<< "red and green: ";
+    redGreen.print();
 
     return 0;
     
