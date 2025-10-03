@@ -14,6 +14,7 @@ class Colors {
 
         Colors() : red(0), green(0), blue(0) {} 
         Colors(int r, int g, int b) : red(r), green(g), blue(b) {}
+        Colors(int r) : red(r), green(0), blue(0) {} //red only
 
         void setRed(int r) { red = r; }
         void setGreen(int g) { green = g; }
@@ -26,8 +27,8 @@ class Colors {
 
         void print() const {
             cout << left << setw(4) << red << " "
-                << left << setw(4) << green << " "
-                << left << setw(4) << blue << endl;
+                 << left << setw(4) << green << " "
+                 << left << setw(4) << blue << endl;
         }
 
 };
@@ -35,12 +36,12 @@ class Colors {
 int main() {
     Colors defaultColor; // default constructor
     Colors fullColor(255, 100, 50); //the constructor with parameters
-    
+    Colors redOnly(128);
 
-    Colors color5;
-    color5.setRed(75);
-    color5.setGreen(0);
-    color5.setBlue(130);
+    Colors colors;
+    colors.setRed(75);
+    colors.setGreen(0);
+    colors.setBlue(130);
 
     cout << left << setw(4) << "R" << " "
          << left << setw(4) << "G" << " "
@@ -53,7 +54,9 @@ int main() {
     cout<< "constructor with parameters: ";
     fullColor.print();
     cout<< "setters: ";
-    color5.print();// print the RGB values
+    colors.print();// print the RGB values
+    cout<< "red only: ";
+    redOnly.print();
 
     return 0;
     
